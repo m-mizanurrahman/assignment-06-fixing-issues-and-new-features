@@ -43,11 +43,14 @@ const selectItem = (event, img) => {
   element.classList.add('added');
 
   let item = sliders.indexOf(img);
+  
   if (item === -1) {
     sliders.push(img);
   } else {
     sliders.splice(item, 1);
   }
+  document.getElementById("total-image-slection").innerHTML = sliders.length; 
+   
 }
 var timer
 const createSlider = () => {
@@ -56,11 +59,12 @@ const createSlider = () => {
     alert('Select at least 2 image.')
     return;
   }
+  
   // crate slider previous next area
   sliderContainer.innerHTML = '';
   const prevNext = document.createElement('div');
   prevNext.className = "prev-next d-flex w-100 justify-content-between align-items-center";
-  prevNext.innerHTML = ` 
+  prevNext.innerHTML = `   
   <span class="prev" onclick="changeItem(-1)"><i class="fas fa-chevron-left"></i></span>
   <span class="next" onclick="changeItem(1)"><i class="fas fa-chevron-right"></i></span>
   `;
@@ -88,6 +92,7 @@ const createSlider = () => {
 
     }, duration);
   }
+  
 }
 // change slider index 
 const changeItem = index => {
