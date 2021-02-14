@@ -9,10 +9,10 @@ let sliders = [];
 
 
 document.getElementById("search")
-  .addEventListener("keypress", function (event) {    
-    if (event.key === 'Enter'){
+  .addEventListener("keypress", function (event) {
+    if (event.key === 'Enter') {
       document.getElementById("search-btn").click();
-    }        
+    }
   });
 
 // If this key doesn't work
@@ -52,7 +52,7 @@ const selectItem = (event, img) => {
   if (item === -1) {
     sliders.push(img);
   } else {
-    sliders.pop(img);
+    sliders.splice(item, 1);
   }
 }
 var timer
@@ -141,11 +141,11 @@ sliderBtn.addEventListener('click', function () {
 
 const toggleSpinner = (show) => {
   const spinner = document.getElementById('loading-spinner');
-  if(show){
+  if (show) {
     spinner.classList.remove('d-none')
   }
-  else{
+  else {
     spinner.classList.add('d-none')
-  } 
-  
+  }
+
 }
