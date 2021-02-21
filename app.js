@@ -83,7 +83,9 @@ const createSlider = () => {
   })
   changeSlide(0)
   if (duration <= 0) {
+    // sliders.length = 0;
     alert('Time duration would be more than zero!');
+    sliderContainer.innerHTML = '';
   }
   else {
     timer = setInterval(function () {
